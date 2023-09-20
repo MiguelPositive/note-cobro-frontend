@@ -2,7 +2,21 @@
 export default {
   content: ["./src/**/*.jsx", "./**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        "350px": "350px",
+        "700px": "700px",
+        "900px": "900px",
+      },
+
+      backgroundColor: {
+        "custom-blue": "#5B53FF",
+      },
+
+      backgroundImage: {
+        logo: "url(../src/imgs/dollar-avif.avif)",
+      },
+    },
   },
   plugins: [],
 };

@@ -1,14 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./dist/output.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="./dist/output.css" rel="stylesheet" />
     <title>NOTE COBRO</title>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body class="animate__animated animate__fadeIn animate__fast">
+    <div
+      id="root"
+      style="
+        background-color: #303443;
+        background-image: url('./src/imgs/bg-avif.avif');
+        background-size: cover;
+      "
+    ></div>
+    <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>
