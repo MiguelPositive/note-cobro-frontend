@@ -1,8 +1,3 @@
-# React + Vite
+# $ Note Cobro 🤑
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta aplicación es un sistema de cobro automatizado que tiene el propósito de mantener un control efectivo sobre los productos adquiridos a crédito. La aplicación incluirá una lista de deudores y permitirá configurar la fecha en la cual enviará recordatorios por correo electrónico y WhatsApp a los usuarios, recordándoles la fecha de vencimiento de sus pagos mensuales. Además, ofrecerá la capacidad de establecer un monto máximo para la deuda de cada cliente. Si los deudores alcanzan este límite, no podrán continuar adquiriendo productos a crédito hasta que salden su deuda pendiente.
