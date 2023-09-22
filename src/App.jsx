@@ -2,12 +2,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Context from "./components/context/Context";
 import Login from "./components/views/Login";
+import Dashboard from "./components/views/Dashboard";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Login />,
+    },
+
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
     },
     {
       path: "*",

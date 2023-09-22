@@ -2,9 +2,14 @@ import React from "react";
 
 import Button from "./Button";
 
-const LoginBoton = () => {
+import { useContext } from "react";
+import { store } from "../context/Context";
+
+const LoginBoton = ({ onClick }) => {
+  const { user } = useContext(store);
+
   return (
-    <Button color={"bg-custom-blue"} >
+    <Button color={"bg-custom-blue"} onClick={onClick}>
       INGRESAR
     </Button>
   );
