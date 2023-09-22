@@ -6,6 +6,7 @@ const Button = ({ children, color, icon, onClick }) => {
       className={`${color} rounded-md p-2 text-center font-bold shadow-sm shadow-black/50 transition-all duration-150 cursor-pointer flex
      justify-around items-center hover:shadow-md hover:shadow-black/60 `}
       onClick={onClick}
+      
     >
       {icon && <i className={icon}></i>}
 

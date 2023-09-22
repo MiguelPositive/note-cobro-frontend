@@ -13,15 +13,21 @@ import { useContext } from "react";
 import { store } from "../context/Context";
 
 import emptyFields from "../alerts/emptyFields";
+import invalidCredentials from "../alerts/invalidCredentials";
 
 const LoginContent = () => {
   const navigate = useNavigate();
 
-  const { user, password, validateCredentials } = useContext(store);
+  const { user, password, validateCredentials, setActiveLoader } =
+    useContext(store);
 
   const redirectDashboard = async () => {
-    if (await validateCredentials()) {
+    const validation = await validateCredentials();
+
+    if (validation) {
       navigate("/dashboard");
+    } else {
+      invalidCredentials();
     }
   };
 
@@ -29,11 +35,18 @@ const LoginContent = () => {
     if (!!user === false || !!password === false) {
       emptyFields();
     } else {
+      setActiveLoader(true);
       redirectDashboard();
     }
   };
   const sendData = () => {
     validateFields();
+  };
+
+  const handleKeyUp = (e) => {
+    if (e.keyCode === 13) {
+      sendData();
+    }
   };
 
   return (
@@ -44,11 +57,11 @@ const LoginContent = () => {
         </div>
 
         <div className="mb-10">
-          <UserInput />
+          <UserInput onKeyUp={handleKeyUp} />
         </div>
 
         <div className="mb-10">
-          <PasswordInput />
+          <PasswordInput onKeyUp={handleKeyUp} />
         </div>
       </div>
 

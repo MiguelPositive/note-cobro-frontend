@@ -6,7 +6,7 @@ import { store } from "../context/Context";
 
 import Input from "./Input";
 
-const PasswordInput = () => {
+const PasswordInput = ({ onKeyUp }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const { password, setPassword } = useContext(store);
@@ -30,6 +30,7 @@ const PasswordInput = () => {
       icon={"bi bi-eye-slash-fill"}
       onClick={handleClick}
       onChange={handleChange}
+      onKeyUp={onKeyUp}
       showPassword={showPassword}
       cursor={"cursor-pointer"}
       value={password}

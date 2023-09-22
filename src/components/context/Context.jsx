@@ -10,6 +10,8 @@ const Context = ({ children }) => {
   const [user, setUser] = useState(null);
   const [password, setPassword] = useState(null);
 
+  const [activeLoader, setActiveLoader] = useState(null);
+
   const validateCredentials = async () => {
     try {
       const res = await axios.post(
@@ -17,7 +19,8 @@ const Context = ({ children }) => {
         { user, password }
       );
 
-      return res;
+      setActiveLoader(false);
+      return res.data.validation;
     } catch (error) {
       console.log(
         `ocurrio un error al validar las credenciales en el frontend  ${error}`
@@ -27,7 +30,15 @@ const Context = ({ children }) => {
 
   return (
     <store.Provider
-      value={{ user, setUser, password, setPassword, validateCredentials }}
+      value={{
+        user,
+        setUser,
+        password,
+        setPassword,
+        validateCredentials,
+        activeLoader,
+        setActiveLoader,
+      }}
     >
       {children}
     </store.Provider>

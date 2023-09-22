@@ -11,6 +11,7 @@ const Input = ({
   value,
   onClick,
   onChange,
+  onKeyUp,
 }) => {
   return (
     <div>
@@ -21,6 +22,7 @@ const Input = ({
           placeholder={placeholder}
           type={showPassword ? "text" : type}
           onChange={onChange}
+          onKeyUp={onKeyUp}
         />
 
         {icon && (

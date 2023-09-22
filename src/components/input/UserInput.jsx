@@ -4,7 +4,7 @@ import Input from "./Input";
 import { useContext } from "react";
 import { store } from "../context/Context";
 
-const UserInput = () => {
+const UserInput = ({ onKeyUp }) => {
   const { user, setUser } = useContext(store);
 
   const handleChange = (e) => {
@@ -17,6 +17,7 @@ const UserInput = () => {
       type={"text"}
       icon={"bi bi-person-circle"}
       onChange={handleChange}
+      onKeyUp={onKeyUp}
       value={user}
     />
   );
