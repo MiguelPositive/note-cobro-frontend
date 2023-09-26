@@ -31,7 +31,7 @@ const LoginContent = () => {
   };
 
   const validateFields = async () => {
-    if (!!user === false || !!password === false) {
+    if (!user || !password) {
       emptyFields();
     } else {
       setActiveLoader(true);
