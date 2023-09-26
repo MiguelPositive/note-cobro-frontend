@@ -10,7 +10,7 @@ const LoginBoton = ({ onClick}) => {
   const { user, activeLoader } = useContext(store);
 
   return (
-    <Button color={"bg-custom-blue"} onClick={onClick}>
+    <Button bgColor={"bg-custom-blue"} onClick={onClick}>
       {activeLoader ? (
         <Loader color={"text-white"} size={"text-xl"} />
       ) : (
