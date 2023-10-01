@@ -12,6 +12,8 @@ const Context = ({ children }) => {
 
   const [activeLoader, setActiveLoader] = useState(null);
 
+  const [activeModal, setActiveModal] = useState(null);
+
   const validateCredentials = async () => {
     try {
       const res = await axios.post(
@@ -38,6 +40,8 @@ const Context = ({ children }) => {
         validateCredentials,
         activeLoader,
         setActiveLoader,
+        activeModal,
+        setActiveModal,
       }}
     >
       {children}

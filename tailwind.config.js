@@ -5,6 +5,7 @@ export default {
     extend: {
       screens: {
         "350px": "350px",
+        "400px": "400px",
         "450px": "450px",
         "700px": "700px",
         "900px": "900px",
@@ -17,8 +18,8 @@ export default {
 
       backgroundImage: {
         logo: "url(../src/imgs/dollar-avif.avif)",
+        bg: "url(../src/imgs/bg-avif.avif)",
       },
     },
   },
-  plugins: [],
 };

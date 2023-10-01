@@ -4,6 +4,7 @@ import WarningTitle from "../titles/WarningTitle";
 
 const Input = ({
   placeholder,
+  sizePlaceholder,
   type,
   icon,
   showPassword,
@@ -18,7 +19,8 @@ const Input = ({
       <div className="relative">
         <input
           className={`h-[3rem] w-full border-[1px] border-gray-400 rounded-md
-         focus:outline-none text-black font-semibold pr-3 pl-3`}
+         focus:outline-none text-black font-semibold
+          ${icon == "" ? "pr-3" : "pr-7"} pl-3 ${sizePlaceholder}`}
           placeholder={placeholder}
           type={showPassword ? "text" : type}
           onChange={onChange}

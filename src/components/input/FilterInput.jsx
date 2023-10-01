@@ -1,10 +1,8 @@
-import React from 'react'
-import Input from './Input'
+import React from "react";
+import Input from "./Input";
 
 const FilterInput = () => {
-  return (
-    <div>FilterInput</div>
-  )
-}
+  return <Input placeholder={"NOMBRE O CECULA"} icon={"bi bi-search"} />;
+};
 
-export default FilterInput
+export default FilterInput;

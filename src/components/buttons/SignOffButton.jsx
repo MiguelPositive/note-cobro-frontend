@@ -18,7 +18,7 @@ const SignOffButton = () => {
         bgColor={"bg-custom-red"}
         bgOpacity={"bg-opacity-90"}
         icon={"bi bi-box-arrow-right"}
-        signoff={true}
+        responsive={true}
         onClick={handleClick}
       >
         {width >= 900 ? "SALIR" : ""}
