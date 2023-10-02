@@ -16,7 +16,7 @@ const Dashboard = () => {
     <>
       <div
         className={`${activeModal && "blur-sm"} 
-      w-[100vw] h-[100vh] realtive overflow-hidden  pt-5 pl-4 pr-4  animate__animated animate__fadeIn animate__faster`}
+        w-[100vw] h-[100vh] realtive  pt-5 pl-4 pr-4  animate__animated animate__fadeIn animate__faster`}
       >
         <div id="title-and-signoff-button" className="mb-5">
           <div className="flex justify-between items-start 450px:relative 450px:justify-center">
@@ -40,9 +40,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="overflow-hidden">
-        <AddDebtorModal />
-      </div>
+      <AddDebtorModal />
     </>
   );
 };

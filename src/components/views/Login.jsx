@@ -21,9 +21,6 @@ const LoginContent = () => {
   const { user, password, validateCredentials, setActiveLoader } =
     useContext(store);
 
-  const [time1, setTime1] = useState();
-  const [time2, setTime2] = useState();
-
   const redirectDashboard = async () => {
     const validation = await validateCredentials();
 
@@ -43,10 +40,7 @@ const LoginContent = () => {
     }
   };
   const sendData = () => {
-    setTime1(performance.now());
     validateFields();
-
-    setTime2(performance.now());
   };
 
   const handleKeyUp = (e) => {
@@ -54,10 +48,6 @@ const LoginContent = () => {
       sendData();
     }
   };
-
-  useEffect(() => {
-    console.log(time2 - time1);
-  }, [time2]);
 
   return (
     <div className="min-w-[100vw] min-h-[100vh] flex justify-center items-center relative animate__animated animate__fadeIn animate__faster">

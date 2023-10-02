@@ -5,14 +5,19 @@ import { store } from "../context/Context";
 import Button from "../buttons/Button";
 import Title from "../titles/Title";
 
-const Modal = ({ children, w, title }) => {
+const Modal = ({ children, w }) => {
   const { activeModal, setActiveModal } = useContext(store);
 
   const [showModal, setShowModal] = useState("hidden");
   const [animation, setAnimation] = useState("animate__bounceIn");
 
+
   const handleClick = () => {
     setActiveModal(null);
+  };
+
+  const handleStopPropagation = (e) => {
+    e.stopPropagation();
   };
 
   useEffect(() => {
@@ -34,13 +39,14 @@ const Modal = ({ children, w, title }) => {
         id="backdrop"
         className={`
         ${showModal}
-
-        absolute top-0 left-0 w-[100vw] h-[100vh] cursor-pointer flex justify-center items-center animated__animated ${animation}`}
+        absolute w-[100vw] h-[100vh] top-0 left-0 cursor-pointer flex justify-center items-center`}
         onClick={handleClick}
       >
         <div
           id="card-modal"
-          className={`${w} relative bg-bg bg-cover shadow-md shadow-balack/80 rounded-md`}
+          className={`${w} relative top-0 bg-bg bg-cover shadow-md shadow-balack/80 rounded-md  
+          ${animation} animated__animated`}
+          onClick={handleStopPropagation}
         >
           <div id="header-modal">
             <div className="absolute top-2 right-2 w-[2.4rem] h-[2rem]">
