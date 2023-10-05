@@ -25,15 +25,16 @@ const PasswordInput = ({ onKeyUp }) => {
 
   return (
     <Input
-      placeholder={"CONTRASEÑA"}
+      value={password}
+      placeholder={"Contraseña"}
       type={"password"}
       icon={"bi bi-eye-slash-fill"}
+      showPassword={showPassword}
+      cursor={"cursor-pointer"}
+      colorWarnig={"text-red-800"}
       onClick={handleClick}
       onChange={handleChange}
       onKeyUp={onKeyUp}
-      showPassword={showPassword}
-      cursor={"cursor-pointer"}
-      value={password}
     />
   );
 };

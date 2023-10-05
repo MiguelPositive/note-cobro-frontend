@@ -4,19 +4,19 @@ import { store } from "../context/Context";
 
 import Input from "./Input";
 
-const NameInput = () => {
-  const { name, setName } = useContext(store);
+const EmailInput = () => {
+  const { email, setEmail } = useContext(store);
 
   const handleChange = (e) => {
-    setName(e.target.value);
+    setEmail(e.target.value);
   };
 
   return (
     <Input
-      value={name}
-      placeholder={"Nombre completo"}
-      icon={"bi bi-person-fill"}
-      type={"text"}
+      value={email}
+      placeholder={"Correo"}
+      icon={"bi bi-envelope-fill"}
+      type={"email"}
       cursor={"cursor-default"}
       colorWarnig={"text-white"}
       onChange={handleChange}
@@ -24,4 +24,4 @@ const NameInput = () => {
   );
 };
 
-export default NameInput;
+export default EmailInput;

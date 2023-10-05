@@ -11,7 +11,6 @@ const Modal = ({ children, w }) => {
   const [showModal, setShowModal] = useState("hidden");
   const [animation, setAnimation] = useState("animate__bounceIn");
 
-
   const handleClick = () => {
     setActiveModal(null);
   };
@@ -39,12 +38,12 @@ const Modal = ({ children, w }) => {
         id="backdrop"
         className={`
         ${showModal}
-        absolute w-[100vw] h-[100vh] top-0 left-0 cursor-pointer flex justify-center items-center`}
+        absolute w-[100vw] overflow-x-hidden h-[100vh] top-0 left-0 cursor-pointer flex justify-center items-center`}
         onClick={handleClick}
       >
         <div
           id="card-modal"
-          className={`${w} relative top-0 bg-bg bg-cover shadow-md shadow-balack/80 rounded-md  
+          className={`${w} relative top-0 bg-bg bg-cover shadow-xl shadow-balack/80 rounded-md  
           ${animation} animated__animated`}
           onClick={handleStopPropagation}
         >
@@ -58,7 +57,7 @@ const Modal = ({ children, w }) => {
               />
             </div>
 
-            <div className="mt-12">
+            <div className="mt-12 mb-5">
               <Title title={"AGREGAR DEUDOR"} color={"text-white"} />
             </div>
           </div>

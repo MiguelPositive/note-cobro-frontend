@@ -10,14 +10,17 @@ const Input = ({
   showPassword,
   cursor,
   value,
+  colorWarnig,
   onClick,
   onChange,
   onKeyUp,
+  onKeyDown,
 }) => {
   return (
     <div>
       <div className="relative">
         <input
+          min={type === "number" ? 1 : null}
           className={`h-[3rem] w-full border-[1px] border-gray-400 rounded-md
          focus:outline-none text-black font-semibold
           ${icon == "" ? "pr-3" : "pr-7"} pl-3 ${sizePlaceholder}`}
@@ -25,11 +28,12 @@ const Input = ({
           type={showPassword ? "text" : type}
           onChange={onChange}
           onKeyUp={onKeyUp}
+          onKeyDown={onKeyDown}
         />
 
         {icon && (
           <i
-            className={`absolute text-black top-3 right-2 opacity-70 
+            className={`absolute text-black text-xl top-3 right-2 opacity-70 
           ${showPassword ? "bi bi-eye-fill" : icon}
            ${cursor}`}
             onClick={onClick}
@@ -39,7 +43,7 @@ const Input = ({
 
       {value == "" ? (
         <WarningTitle
-          color={"text-red-800"}
+          color={colorWarnig}
           size={"text-md"}
           title={"Debe llenar el campo"}
         />

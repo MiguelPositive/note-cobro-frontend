@@ -27,16 +27,9 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div
-          id="add-and-filter-deptors"
-          className="flex justify-center flex-wrap 400px:flex-nowrap 400px:gap-4"
-        >
-          <div className="w-full mb-5">
-            <FilterInput />
-          </div>
-          <div className="w-full flex justify-start 400px:justify-end 400px:w-[30%] 450px:w-full">
-            <AddDebtorButton />
-          </div>
+        <div id="add-and-filter-deptors" className="flex justify-between gap-2">
+         <div className="w-full"> <FilterInput /></div>
+          <AddDebtorButton />
         </div>
       </div>
 

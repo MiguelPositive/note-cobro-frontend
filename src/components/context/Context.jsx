@@ -7,12 +7,21 @@ import axios from "axios";
 export const store = createContext();
 
 const Context = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [password, setPassword] = useState(null);
-
   const [activeLoader, setActiveLoader] = useState(null);
 
   const [activeModal, setActiveModal] = useState(null);
+
+  const [user, setUser] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const [name, setName] = useState(null);
+  const [cedula, setCedula] = useState(null);
+  const [contact, setContact] = useState(null);
+  const [email, setEmail] = useState(null);
+
+  const [nameProduct, setNameProduct] = useState(null);
+  const [productValue, setProductValue] = useState(null);
+  const [productUnits, setProductUnits] = useState(null);
 
   const validateCredentials = async () => {
     try {
@@ -42,6 +51,20 @@ const Context = ({ children }) => {
         setActiveLoader,
         activeModal,
         setActiveModal,
+        name,
+        setName,
+        cedula,
+        setCedula,
+        contact,
+        setContact,
+        email,
+        setEmail,
+        nameProduct,
+        setNameProduct,
+        productValue,
+        setProductValue,
+        productUnits,
+        setProductUnits
       }}
     >
       {children}

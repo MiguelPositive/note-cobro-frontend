@@ -21,7 +21,7 @@ const SignOffButton = () => {
         responsive={true}
         onClick={handleClick}
       >
-        {width >= 900 ? "SALIR" : ""}
+        {width >= 900 ? "Salir" : ""}
       </Button>
     </div>
   );

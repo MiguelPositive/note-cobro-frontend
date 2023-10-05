@@ -13,12 +13,13 @@ const UserInput = ({ onKeyUp }) => {
 
   return (
     <Input
-      placeholder={"USUARIO"}
+      value={user}
+      placeholder={"Usuario"}
       type={"text"}
       icon={"bi bi-person-circle"}
+      colorWarnig={"text-red-800"}
       onChange={handleChange}
       onKeyUp={onKeyUp}
-      value={user}
     />
   );
 };
