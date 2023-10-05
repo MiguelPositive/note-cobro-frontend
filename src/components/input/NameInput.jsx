@@ -4,7 +4,7 @@ import { store } from "../context/Context";
 
 import Input from "./Input";
 
-const NameInput = () => {
+const NameInput = ({ onKeyUp }) => {
   const { name, setName } = useContext(store);
 
   const handleChange = (e) => {
@@ -20,6 +20,7 @@ const NameInput = () => {
       cursor={"cursor-default"}
       colorWarnig={"text-white"}
       onChange={handleChange}
+      onKeyUp={onKeyUp}
     />
   );
 };

@@ -6,13 +6,16 @@ import Button from "../buttons/Button";
 import Title from "../titles/Title";
 
 const Modal = ({ children, w }) => {
-  const { activeModal, setActiveModal } = useContext(store);
+  const { activeModal, setActiveModal, cleanData } = useContext(store);
 
   const [showModal, setShowModal] = useState("hidden");
   const [animation, setAnimation] = useState("animate__bounceIn");
 
   const handleClick = () => {
     setActiveModal(null);
+    setTimeout(() => {
+      cleanData();
+    }, 1000);
   };
 
   const handleStopPropagation = (e) => {

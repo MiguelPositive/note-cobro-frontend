@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 import WarningTitle from "../titles/WarningTitle";
 
@@ -21,6 +22,7 @@ const Input = ({
       <div className="relative">
         <input
           min={type === "number" ? 1 : null}
+          value={value === null ? "": value }
           className={`h-[3rem] w-full border-[1px] border-gray-400 rounded-md
          focus:outline-none text-black font-semibold
           ${icon == "" ? "pr-3" : "pr-7"} pl-3 ${sizePlaceholder}`}

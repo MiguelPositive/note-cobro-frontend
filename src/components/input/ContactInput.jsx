@@ -5,7 +5,7 @@ import { store } from "../context/Context";
 
 import Input from "./Input";
 
-const ContactInput = () => {
+const ContactInput = ({ onKeyUp }) => {
   const { contact, setContact } = useContext(store);
 
   const handleChange = (e) => {
@@ -28,6 +28,7 @@ const ContactInput = () => {
       colorWarnig={"text-white"}
       onChange={handleChange}
       onKeyDown={handleKeyDown}
+      onKeyUp={onKeyUp}
     />
   );
 };

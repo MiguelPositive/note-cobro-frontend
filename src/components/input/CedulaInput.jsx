@@ -4,7 +4,7 @@ import { store } from "../context/Context";
 
 import Input from "./Input";
 
-const CedulaInput = () => {
+const CedulaInput = ({ onKeyUp }) => {
   const { cedula, setCedula } = useContext(store);
 
   const handleChange = (e) => {
@@ -27,6 +27,7 @@ const CedulaInput = () => {
       colorWarnig={"text-white"}
       onChange={handleChange}
       onKeyDown={handleKeyDown}
+      onKeyUp={onKeyUp}
     />
   );
 };

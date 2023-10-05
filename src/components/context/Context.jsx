@@ -4,6 +4,8 @@ import { createContext } from "react";
 
 import axios from "axios";
 
+import debtorRegistered from "../alerts/debtorRegistered";
+
 export const store = createContext();
 
 const Context = ({ children }) => {
@@ -39,6 +41,35 @@ const Context = ({ children }) => {
     }
   };
 
+  const createDebtor = async (name, cedula, contact, email) => {
+    await axios.post("http://localhost:4000/create-debtor", {
+      name,
+      cedula,
+      contact,
+      email,
+    });
+
+    setTimeout(() => {
+      setActiveLoader(null);
+      setActiveModal(null);
+      debtorRegistered();
+      cleanData();
+    }, 300);
+    try {
+    } catch (error) {
+      console.log(
+        `ocurrio un error en el frontend al intentar crear el deudor. ${error}`
+      );
+    }
+  };
+
+  const cleanData = () => {
+    setName(null);
+    setCedula(null);
+    setContact(null);
+    setEmail(null);
+  };
+
   return (
     <store.Provider
       value={{
@@ -64,7 +95,9 @@ const Context = ({ children }) => {
         productValue,
         setProductValue,
         productUnits,
-        setProductUnits
+        setProductUnits,
+        createDebtor,
+        cleanData,
       }}
     >
       {children}

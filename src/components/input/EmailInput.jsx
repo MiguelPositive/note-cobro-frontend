@@ -4,7 +4,7 @@ import { store } from "../context/Context";
 
 import Input from "./Input";
 
-const EmailInput = () => {
+const EmailInput = ({ onKeyUp }) => {
   const { email, setEmail } = useContext(store);
 
   const handleChange = (e) => {
@@ -20,6 +20,7 @@ const EmailInput = () => {
       cursor={"cursor-default"}
       colorWarnig={"text-white"}
       onChange={handleChange}
+      onKeyUp={onKeyUp}
     />
   );
 };
