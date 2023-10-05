@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { store } from "../context/Context";
 
 import Modal from "./Modal";
-import NameInput from "../input/nameInput";
+import NameInput from "../input/NameInput";
 import CedulaInput from "../input/CedulaInput";
 import ContactInput from "../input/ContactInput";
 import EmailInput from "../input/EmailInput";
