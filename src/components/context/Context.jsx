@@ -42,7 +42,7 @@ const Context = ({ children }) => {
   };
 
   const createDebtor = async (name, cedula, contact, email) => {
-    await axios.post("http://localhost:4000/create-debtor", {
+    await axios.post("https://note-cobro.onrender.com/create-debtor", {
       name,
       cedula,
       contact,
