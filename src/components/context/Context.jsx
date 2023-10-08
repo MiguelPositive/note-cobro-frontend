@@ -25,6 +25,9 @@ const Context = ({ children }) => {
   const [productValue, setProductValue] = useState(null);
   const [productUnits, setProductUnits] = useState(null);
 
+  const [debtors, setDebtors] = useState([]);
+  const [debtorsCopy, setDebtorsCopy] = useState([]);
+
   const validateCredentials = async () => {
     try {
       const res = await axios.post(
@@ -59,6 +62,21 @@ const Context = ({ children }) => {
     } catch (error) {
       console.log(
         `ocurrio un error en el frontend al intentar crear el deudor. ${error}`
+      );
+    }
+  };
+
+  const getDebtors = async () => {
+    try {
+      const res = await axios.get(
+        "https://note-cobro.onrender.com/get-debtors"
+      );
+
+      setDebtors(res.data.debtors);
+      setDebtorsCopy(res.data.debtors);
+    } catch (error) {
+      console.log(
+        `ocurrio un error en el frontend al intentar consultar los deudores. ${error}`
       );
     }
   };
@@ -98,6 +116,9 @@ const Context = ({ children }) => {
         setProductUnits,
         createDebtor,
         cleanData,
+        getDebtors,
+        debtors,
+        debtorsCopy,
       }}
     >
       {children}

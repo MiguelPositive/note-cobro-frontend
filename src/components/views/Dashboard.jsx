@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useContext } from "react";
 import { store } from "../context/Context";
 
@@ -6,11 +7,16 @@ import Title from "../titles/Title";
 import SignOffButton from "../buttons/SignOffButton";
 import AddDebtorButton from "../buttons/AddDebtorButton";
 import FilterInput from "../input/FilterInput";
-
 import AddDebtorModal from "../modals/AddDebtorModal";
 
+import DebtorsTable from "../tables/DebtorsTable";
+
 const Dashboard = () => {
-  const { activeModal } = useContext(store);
+  useEffect(() => {
+    getDebtors();
+  }, []);
+
+  const { activeModal, getDebtors, debtorsCopy } = useContext(store);
 
   return (
     <>
@@ -27,10 +33,25 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div id="add-and-filter-deptors" className="flex justify-between gap-2">
-         <div className="w-full"> <FilterInput /></div>
+        <div
+          id="add-and-filter-deptors"
+          className="flex justify-between gap-2 mb-5"
+        >
+          <div className="w-full">
+            <FilterInput />
+          </div>
           <AddDebtorButton />
         </div>
+
+        <>
+          {debtorsCopy.map((debtor) => (
+            <React.Fragment key={debtor._id}>
+              <DebtorsTable name={debtor.name} />
+
+              <br />
+            </React.Fragment>
+          ))}
+        </>
       </div>
 
       <AddDebtorModal />
