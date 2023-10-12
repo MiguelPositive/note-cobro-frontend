@@ -22,7 +22,7 @@ const Dashboard = () => {
     <>
       <div
         className={`${activeModal && "blur-sm"} 
-        w-[100vw] h-[100vh] realtive  pt-5 pl-4 pr-4  animate__animated animate__fadeIn animate__faster`}
+        w-[100vw] h-min-[100vh] realtive pt-5 pl-4 pr-4  animate__animated animate__fadeIn animate__faster`}
       >
         <div id="title-and-signoff-button" className="mb-5">
           <div className="flex justify-between items-start 450px:relative 450px:justify-center">
@@ -33,25 +33,26 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div
-          id="add-and-filter-deptors"
-          className="flex justify-between gap-2 mb-5"
-        >
+        <div id="add-and-filter-deptors" className="flex justify-between gap-2">
           <div className="w-full">
             <FilterInput />
           </div>
           <AddDebtorButton />
         </div>
 
-        <>
-          {debtorsCopy.map((debtor) => (
-            <React.Fragment key={debtor._id}>
-              <DebtorsTable name={debtor.name} />
+        {
+          <div className="w-full">
+            {debtorsCopy.map((debtor) => (
+              <React.Fragment key={debtor._id}>
+                <div className="flex flex-wrap gap-5">
+                  <DebtorsTable name={debtor.name} />
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+        }
 
-              <br />
-            </React.Fragment>
-          ))}
-        </>
+        {/* <DebtorsTable name={"nombre de algo"} /> */}
       </div>
 
       <AddDebtorModal />
