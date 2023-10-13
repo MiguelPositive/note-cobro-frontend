@@ -15,14 +15,14 @@ const DebtorsTable = ({ name }) => {
   };
 
   return (
-    <div className="w-full bg-[#C0C0C3] bg-opacity-20 border-white/10 border-[1px] shadow-md shadow-black/80 rounded-md">
+    <div className="w-full bg-[#C0C0C3] bg-opacity-20 border-white/10 border-[1px] shadow-sm shadow-black/80 transition-all duration-75 rounded-md hover:shadow-lg hover:scale-[101%]">
       <div
-        className={`cursor-pointer flex justify-between items-center`}
+        className="cursor-pointer flex justify-between"
         onClick={handleClick}
       >
         <span>{name}</span>
         <i
-          className={`mr-auto bi bi-arrow-up-short text-2xl transition-all duration-100
+          className={`bi bi-arrow-up-short text-2xl transition-all duration-100
       ${showInfo ? "rotate-180" : ""}`}
         ></i>
       </div>
