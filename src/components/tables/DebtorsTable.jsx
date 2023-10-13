@@ -20,9 +20,9 @@ const DebtorsTable = ({ name }) => {
         className={`cursor-pointer flex justify-between items-center`}
         onClick={handleClick}
       >
-        {name}
+        <span>{name}</span>
         <i
-          className={`bi bi-arrow-up-short text-2xl transition-all duration-100
+          className={`mr-auto bi bi-arrow-up-short text-2xl transition-all duration-100
       ${showInfo ? "rotate-180" : ""}`}
         ></i>
       </div>
