@@ -14,6 +14,7 @@ const Input = ({
   colorWarnig,
   onClick,
   onChange,
+  onInput,
   onKeyUp,
   onKeyDown,
 }) => {
@@ -29,6 +30,7 @@ const Input = ({
           placeholder={placeholder}
           type={showPassword ? "text" : type}
           onChange={onChange}
+          onInput={onInput}
           onKeyUp={onKeyUp}
           onKeyDown={onKeyDown}
         />

@@ -52,6 +52,8 @@ const Context = ({ children }) => {
       email,
     });
 
+    getDebtors();
+
     setTimeout(() => {
       setActiveLoader(null);
       setActiveModal(null);
@@ -119,6 +121,7 @@ const Context = ({ children }) => {
         getDebtors,
         debtors,
         debtorsCopy,
+        setDebtorsCopy,
       }}
     >
       {children}
