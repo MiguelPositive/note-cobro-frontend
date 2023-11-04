@@ -48,7 +48,7 @@ const Dashboard = () => {
           ))}
         </div>
 
-        {/* <DebtorsTable name={"nombre de algo"} /> */}
+  
       </div>
 
       <AddDebtorModal />

@@ -1,7 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
+import { useContext } from "react";
+import { store } from "../context/Context";
+
 const DebtorsTable = ({ debtor }) => {
+  const { debtorTemp, setDebtorTemp } = useContext(store);
+
   const [showInfo, setShowInfo] = useState(null);
 
   const handleClick = () => {
@@ -12,6 +17,12 @@ const DebtorsTable = ({ debtor }) => {
     } else {
       setShowInfo(true);
     }
+  };
+
+  const handleId = () => {
+    setDebtorTemp(debtor);
+
+    console.log(debtor);
   };
 
   return (
@@ -32,17 +43,18 @@ const DebtorsTable = ({ debtor }) => {
     ${
       showInfo ? "h-[10rem] border-t-[1px] mt-2 pt-3 900px:h-[5rem]" : "h-0"
     } transition-all duration-75 overflow-hidden hover:bg-custom-blue`}
+        onClick={handleId}
       >
         <div className="mt-5 mb-5 900px:mt-0">
-          <div className="font-semibold 900px:text-center">Cedula</div>{" "}
+          <div className="font-semibold 900px:text-center">Cedula</div>
           {debtor.cedula}
         </div>
         <div className="mb-5">
-          <div className="font-semibold 900px:text-center"> Telefono</div>{" "}
+          <div className="font-semibold 900px:text-center"> Telefono</div>
           {debtor.contact}
         </div>
         <div className="mb-5">
-          <div className="font-semibold 900px:text-center">Correo</div>{" "}
+          <div className="font-semibold 900px:text-center">Correo</div>
           {debtor.email}
         </div>
       </div>

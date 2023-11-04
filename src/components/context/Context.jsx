@@ -28,6 +28,8 @@ const Context = ({ children }) => {
   const [debtors, setDebtors] = useState([]);
   const [debtorsCopy, setDebtorsCopy] = useState([]);
 
+  const [debtorTemp, setDebtorTemp] = useState("");
+
   const validateCredentials = async () => {
     try {
       const res = await axios.post(
@@ -122,6 +124,8 @@ const Context = ({ children }) => {
         debtors,
         debtorsCopy,
         setDebtorsCopy,
+        debtorTemp,
+        setDebtorTemp,
       }}
     >
       {children}
