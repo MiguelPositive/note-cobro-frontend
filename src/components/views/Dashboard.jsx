@@ -26,9 +26,9 @@ const Dashboard = () => {
         style={{ scrollbarGutter: "stable", overflow: "auto" }}
       >
         <div id="title-and-signoff-button" className="mb-5">
-          <div className="flex justify-between items-start 450px:relative 450px:justify-center">
+          <div className="flex justify-between items-start relative 900px:justify-center">
             <Title title={"NOTE COBRO"} titleColor={"text-white"} />
-            <div className="450px:absolute 450px:right-0">
+            <div className="900px:absolute 900px:right-0">
               <SignOffButton />
             </div>
           </div>
@@ -47,8 +47,6 @@ const Dashboard = () => {
             </React.Fragment>
           ))}
         </div>
-
-  
       </div>
 
       <AddDebtorModal />

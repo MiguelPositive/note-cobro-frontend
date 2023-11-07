@@ -22,6 +22,7 @@ const AddDebtorButton = () => {
       iconSize={"text-xl"}
       height={"h-[3rem]"}
       onClick={handleClick}
+      center={"justify-around"}
     >
       {width >= 900 ? "Nuevo deudor" : null}
     </Button>

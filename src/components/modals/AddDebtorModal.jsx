@@ -30,7 +30,7 @@ const AddDebtorModal = () => {
       emptyFields();
     } else {
       setActiveLoader(true);
-      createDebtor(name, contact, cedula, email);
+      createDebtor(name, cedula, contact, email);
     }
   };
 
@@ -44,7 +44,7 @@ const AddDebtorModal = () => {
     <>
       <Modal
         w={"w-[17rem] 350px:w-[22rem] 400px:w-[23rem] 450px:w-[25rem]"}
-        title={"AGREGAR DEUDOR"}
+        title={"Agregar deudor"}
       >
         <div className="flex justify-center items-center flex-wrap pl-5 pr-5 350px:pl-8 350px:pr-8 400px:pl-10 400px:pr-10">
           <div className={`${style}`}>
@@ -61,7 +61,11 @@ const AddDebtorModal = () => {
           </div>
 
           <div className={"w-[50%] mb-8"}>
-            <Button bgColor={"bg-custom-blue"} onClick={sendData}>
+            <Button
+              bgColor={"bg-custom-blue"}
+              onClick={sendData}
+              center={"justify-center"}
+            >
               {activeLoader ? (
                 <Loader color={"text-white"} size={"text-lg"} />
               ) : (

@@ -20,6 +20,8 @@ const SignOffButton = () => {
         icon={"bi bi-box-arrow-right"}
         responsive={true}
         onClick={handleClick}
+        center={"justify-around"}
+        mr={"900px:mr-2"}
       >
         {width >= 900 ? "Salir" : ""}
       </Button>

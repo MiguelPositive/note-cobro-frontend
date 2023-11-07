@@ -5,7 +5,7 @@ import { store } from "../context/Context";
 import Button from "../buttons/Button";
 import Title from "../titles/Title";
 
-const Modal = ({ children, w }) => {
+const Modal = ({ children, w, title }) => {
   const { activeModal, setActiveModal, cleanData } = useContext(store);
 
   const [showModal, setShowModal] = useState("hidden");
@@ -51,17 +51,18 @@ const Modal = ({ children, w }) => {
           onClick={handleStopPropagation}
         >
           <div id="header-modal">
-            <div className="absolute top-2 right-2 w-[2.4rem] h-[2rem]">
+            <div className="absolute top-2 right-2 w-[2.2rem] h-[1.2em] 900px:w-[2.4rem] 900px:h-[2rem]">
               <Button
                 icon={"bi bi-x-lg"}
                 bgColor={"bg-custom-red"}
                 responsive={true}
                 onClick={handleClick}
+                center={"justify-center"}
               />
             </div>
 
             <div className="mt-12 mb-5">
-              <Title title={"AGREGAR DEUDOR"} color={"text-white"} />
+              <Title title={title} color={"text-white"} />
             </div>
           </div>
 

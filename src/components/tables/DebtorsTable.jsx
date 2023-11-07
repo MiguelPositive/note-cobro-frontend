@@ -4,10 +4,14 @@ import { useState } from "react";
 import { useContext } from "react";
 import { store } from "../context/Context";
 
+import { useNavigate } from "react-router-dom";
+
 const DebtorsTable = ({ debtor }) => {
   const { debtorTemp, setDebtorTemp } = useContext(store);
 
   const [showInfo, setShowInfo] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleClick = () => {
     if (showInfo === null) {
@@ -19,10 +23,10 @@ const DebtorsTable = ({ debtor }) => {
     }
   };
 
-  const handleId = () => {
+  const handleDebtorTemp = () => {
     setDebtorTemp(debtor);
 
-    console.log(debtor);
+    navigate("/debtor-menu");
   };
 
   return (
@@ -43,7 +47,7 @@ const DebtorsTable = ({ debtor }) => {
     ${
       showInfo ? "h-[10rem] border-t-[1px] mt-2 pt-3 900px:h-[5rem]" : "h-0"
     } transition-all duration-75 overflow-hidden hover:bg-custom-blue`}
-        onClick={handleId}
+        onClick={handleDebtorTemp}
       >
         <div className="mt-5 mb-5 900px:mt-0">
           <div className="font-semibold 900px:text-center">Cedula</div>

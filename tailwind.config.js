@@ -14,12 +14,18 @@ export default {
       backgroundColor: {
         "custom-blue": "#5B53FF",
         "custom-red": "#A82F1F",
+        "custom-organge": "#EC681D",
       },
 
       backgroundImage: {
         logo: "url(../src/imgs/dollar-avif.avif)",
         bg: "url(../src/imgs/bg-avif.avif)",
       },
+
+     boxShadow : {
+
+      "custom-shadow": "5px 5px 5px 5px black/50",
+     },
     },
   },
 };
