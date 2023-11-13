@@ -46,7 +46,7 @@ const Modal = ({ children, w, title }) => {
       >
         <div
           id="card-modal"
-          className={`${w} relative top-0 bg-bg bg-cover shadow-xl shadow-balack/80 rounded-md  
+          className={`${w} relative top-0 bg-bg bg-cover shadow-xl shadow-black/50 rounded-md  
           ${animation} animated__animated`}
           onClick={handleStopPropagation}
         >

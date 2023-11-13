@@ -14,6 +14,7 @@ const LoginBoton = ({ onClick }) => {
       bgColor={"bg-custom-blue"}
       onClick={onClick}
       center={"justify-center"}
+      rounded={"rounded-md"}
     >
       {activeLoader ? (
         <Loader color={"text-white"} size={"text-xl"} />

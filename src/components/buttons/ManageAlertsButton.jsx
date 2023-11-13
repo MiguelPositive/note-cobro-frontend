@@ -11,6 +11,7 @@ const ManageAlertsButton = () => {
         iconSize={"text-3xl"}
         center={"justify-center"}
         mr={"mr-2"}
+        rounded={"rounded-md"}
       >
         Gestionar alertas
       </Button>

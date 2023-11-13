@@ -4,11 +4,11 @@ import { store } from "../context/Context";
 
 import Input from "./Input";
 
-const ProductValueInput = () => {
-  const { productValue, setProductValue } = useContext(store);
+const ProductsQuantityInput = ({ onKeyUp }) => {
+  const { productsQuantity, setProductsQuantity } = useContext(store);
 
   const handleChange = (e) => {
-    setProductValue(e.target.value);
+    setProductsQuantity(e.target.value);
   };
 
   const handleKeyDown = (e) => {
@@ -19,15 +19,16 @@ const ProductValueInput = () => {
 
   return (
     <Input
-      value={productValue}
-      placeholder={"Precio por unidad"}
+      value={productsQuantity}
+      placeholder={"Unidades del producto"}
       type={"number"}
-      icon={"bi bi-currency-dollar"}
       colorWarnig={"text-white"}
+      icon={"bi bi-hash"}
       onChange={handleChange}
       onKeyDown={handleKeyDown}
+      onKeyUp={onKeyUp}
     />
   );
 };
 
-export default ProductValueInput;
+export default ProductsQuantityInput;

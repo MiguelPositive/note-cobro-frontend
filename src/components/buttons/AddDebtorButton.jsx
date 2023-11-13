@@ -23,6 +23,7 @@ const AddDebtorButton = () => {
       height={"h-[3rem]"}
       onClick={handleClick}
       center={"justify-around"}
+      rounded={"rounded-md"}
     >
       {width >= 900 ? "Nuevo deudor" : null}
     </Button>

@@ -1,28 +1,22 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 import Button from "./Button";
 import useScreenSize from "../../hooks/useScreenSize";
 
-const HomeButton = () => {
+const HomeButton = ({ onClick }) => {
   const { width } = useScreenSize();
-
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/dashboard");
-  };
 
   return (
     <div className="w-[2.5rem] h-[3rem] 900px:w-[6rem]">
       <Button
         bgColor={"bg-custom-blue"}
         responsive={true}
-        icon={"bi bi-house-door-fill"}
+        icon={"bi bi-caret-left-fill"}
         mr={"ml-1 900px:mr-2"}
-        onClick={handleClick}
+        onClick={onClick}
+        rounded={"rounded-md"}
       >
-        {width >= 900 ? "Volver" : ""}{" "}
+        {width >= 900 ? "Volver" : ""}
       </Button>
     </div>
   );

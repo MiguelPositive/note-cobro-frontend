@@ -4,23 +4,22 @@ import { store } from "../context/Context";
 
 import Button from "./Button";
 
-const AddCreditButton = () => {
-  const { activeModal, setActiveModal } = useContext(store);
 
-  const handleClick = () => {
-    setActiveModal(true);
-  };
+const AddCreditButton = ({ onClick }) => {
+  const { activeLoader, setActiveLoader } = useContext(store);
 
   return (
     <div>
       <Button
         bgColor={"bg-custom-blue"}
         center={"justify-center"}
-        icon={"bi bi-currency-dollar"}
+        icon={activeLoader ? "" : "bi bi-currency-dollar"}
         iconSize={"text-3xl"}
-        onClick={handleClick}
+        rounded={"rounded-md"}
+        onClick={onClick}
       >
-        Agregar credito
+       
+       Agregar credito
       </Button>
     </div>
   );

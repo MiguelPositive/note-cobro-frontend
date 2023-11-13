@@ -22,6 +22,7 @@ const SignOffButton = () => {
         onClick={handleClick}
         center={"justify-around"}
         mr={"900px:mr-2"}
+        rounded={"rounded-md"}
       >
         {width >= 900 ? "Salir" : ""}
       </Button>

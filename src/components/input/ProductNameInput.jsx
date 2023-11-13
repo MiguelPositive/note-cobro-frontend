@@ -4,22 +4,23 @@ import { store } from "../context/Context";
 
 import Input from "./Input";
 
-const ProductNameInput = () => {
-  const { nameProduct, setNameProduct } = useContext(store);
+const ProductNameInput = ({ onKeyUp }) => {
+  const { productName, setProductName } = useContext(store);
 
   const handleChange = (e) => {
-    setNameProduct(e.target.value);
+    setProductName(e.target.value);
   };
 
   return (
     <Input
-      value={nameProduct}
+      value={productName}
       placeholder={"Producto"}
       type={"text"}
       icon={"bi bi-basket3-fill"}
       cursor={"cursor-default"}
       colorWarnig={"text-white"}
       onChange={handleChange}
+      onKeyUp={onKeyUp}
     />
   );
 };

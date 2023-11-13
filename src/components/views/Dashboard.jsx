@@ -22,8 +22,8 @@ const Dashboard = () => {
     <>
       <div
         className={`${activeModal && "blur-sm"} 
-        custom-scroll w-[100vw] h-[100vh] realtive pt-5 pl-4 pr-4  animate__animated animate__fadeIn animate__faster`}
-        style={{ scrollbarGutter: "stable", overflow: "auto" }}
+        custom-scroll w-[100vw] h-[100vh] realtive pt-5 pl-4 pr-4 overflow-auto animate__animated animate__fadeIn animate__faster`}
+       
       >
         <div id="title-and-signoff-button" className="mb-5">
           <div className="flex justify-between items-start relative 900px:justify-center">
@@ -40,10 +40,10 @@ const Dashboard = () => {
           </div>
           <AddDebtorButton />
         </div>
-        <div className="w-full flex flex-col gap-5 pt-5 pb-8">
+        <div className="w-full flex flex-col gap-5 pt-5 pb-32 900px:pb-8">
           {debtorsCopy.map((debtor) => (
             <React.Fragment key={debtor._id}>
-              <DebtorsTable debtor={debtor} />
+              <DebtorsTable data={debtor} />
             </React.Fragment>
           ))}
         </div>

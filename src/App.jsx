@@ -4,6 +4,7 @@ import Context from "./components/context/Context";
 import Login from "./components/views/Login";
 import Dashboard from "./components/views/Dashboard";
 import DebtorMenu from "./components/views/DebtorMenu";
+import ProductsDetails from "./components/views/ProductsDetails";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +19,8 @@ function App() {
     },
 
     { path: "/debtor-menu", element: <DebtorMenu /> },
+
+    { path: "/products-details", element: <ProductsDetails /> },
     {
       path: "*",
       element: <Login />,

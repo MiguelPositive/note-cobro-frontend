@@ -11,12 +11,14 @@ const Button = ({
   center,
   mr,
   onClick,
+  rounded,
 }) => {
   return (
     <div
       className={`${bgColor} ${bgOpacity} ${height}
      
-      ${responsive ? "rounded-full 900px:rounded-md" : "rounded-md"} 
+      ${responsive ? "rounded-full 900px:rounded-md" : rounded} 
+
        p-2 text-center font-bold shadow-sm shadow-black/50 transition-all duration-150 cursor-pointer flex ${center} items-center hover:shadow-md hover:shadow-black/60 hover:scale-105`}
       onClick={onClick}
     >

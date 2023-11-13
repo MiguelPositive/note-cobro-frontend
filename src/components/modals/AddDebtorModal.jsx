@@ -65,6 +65,7 @@ const AddDebtorModal = () => {
               bgColor={"bg-custom-blue"}
               onClick={sendData}
               center={"justify-center"}
+              rounded={"rounded-md"}
             >
               {activeLoader ? (
                 <Loader color={"text-white"} size={"text-lg"} />
