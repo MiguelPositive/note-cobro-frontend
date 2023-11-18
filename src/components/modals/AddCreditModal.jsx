@@ -23,6 +23,7 @@ const AddCreditModal = () => {
 
   const {
     setActiveLoader,
+    activeModal,
     debtorTemp,
     productName,
     addProducts,
@@ -71,7 +72,7 @@ const AddCreditModal = () => {
 
   return (
     <div className={`${HiddenAddCredit ? "blur-sm" : ""}`}>
-      <Modal w={"w-[17rem]"} title={"Agregar credito"}>
+      <Modal w={"w-[17rem]"} title={"Agregar credito"} active={activeModal}>
         <div className="flex flex-col gap-5 p-5">
           <ProductNameInput onKeyUp={handleListProducts} />
           <UnitPriceInput onKeyUp={handleListProducts} />

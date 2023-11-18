@@ -23,6 +23,7 @@ const AddDebtorModal = () => {
     createDebtor,
     activeLoader,
     setActiveLoader,
+    activeModal,
   } = useContext(store);
 
   const sendData = () => {
@@ -45,6 +46,7 @@ const AddDebtorModal = () => {
       <Modal
         w={"w-[17rem] 350px:w-[22rem] 400px:w-[23rem] 450px:w-[25rem]"}
         title={"Agregar deudor"}
+        active={activeModal}
       >
         <div className="flex justify-center items-center flex-wrap pl-5 pr-5 350px:pl-8 350px:pr-8 400px:pl-10 400px:pr-10">
           <div className={`${style}`}>

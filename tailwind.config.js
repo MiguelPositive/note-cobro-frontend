@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.jsx"],
+  content: [
+    "./src/**/*.jsx",
+    "'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
+  plugins: [require("flowbite/plugin")],
   theme: {
     extend: {
       screens: {
@@ -22,10 +26,9 @@ export default {
         bg: "url(../src/imgs/bg-avif.avif)",
       },
 
-     boxShadow : {
-
-      "custom-shadow": "5px 5px 5px 5px black/50",
-     },
+      boxShadow: {
+        "custom-shadow": "5px 5px 5px 5px black/50",
+      },
     },
   },
 };

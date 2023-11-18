@@ -6,6 +6,7 @@ import axios from "axios";
 
 import debtorRegistered from "../alerts/debtorRegistered";
 import debtAdded from "../alerts/debtAdded";
+import alertCreated from "../alerts/alertCreated";
 
 export const store = createContext();
 
@@ -13,8 +14,7 @@ const Context = ({ children }) => {
   const [activeLoader, setActiveLoader] = useState(null);
 
   const [activeModal, setActiveModal] = useState(null);
-
-  const [hiddenAddCredit, setHiddenAddCredit] = useState(null);
+  const [alertsModal, setAlertsModal] = useState(null);
 
   const [user, setUser] = useState(null);
   const [password, setPassword] = useState(null);
@@ -36,6 +36,11 @@ const Context = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(null);
 
   const [products, setProducts] = useState([]);
+
+  const [payDay, setPayDay] = useState("");
+  const [payMonth, setPayMonth] = useState("");
+  const [payHour, setPayHour] = useState("");
+  const [maxAmount, setMaxAmount] = useState(null);
 
   const validateCredentials = async () => {
     try {
@@ -122,6 +127,28 @@ const Context = ({ children }) => {
     }
   };
 
+  const createAlert = async () => {
+    try {
+      await axios.post("http://localhost:4000/create-alert", {
+        _id: debtorTemp._id,
+        payDay,
+        payMonth,
+        payHour,
+        maxAmount,
+      });
+
+      setAlertsModal(null);
+
+      setTimeout(() => {
+        alertCreated();
+      }, 600);
+    } catch (error) {
+      console.log(
+        `ocurrio un error al intentar crear la alerta en el front: ${error}`
+      );
+    }
+  };
+
   const cleanData = () => {
     setName(null);
     setCedula(null);
@@ -136,10 +163,6 @@ const Context = ({ children }) => {
     setTotalPrice(null);
   };
 
-  // useEffect(() => {
-  //   console.log(totalPrice);
-  // }, [totalPrice]);
-
   return (
     <store.Provider
       value={{
@@ -152,6 +175,8 @@ const Context = ({ children }) => {
         setActiveLoader,
         activeModal,
         setActiveModal,
+        alertsModal,
+        setAlertsModal,
         name,
         setName,
         cedula,
@@ -182,6 +207,15 @@ const Context = ({ children }) => {
         products,
         setProducts,
         addDebt,
+        payDay,
+        setPayDay,
+        payMonth,
+        setPayMonth,
+        payHour,
+        setPayHour,
+        maxAmount,
+        setMaxAmount,
+        createAlert,
       }}
     >
       {children}

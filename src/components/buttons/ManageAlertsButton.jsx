@@ -2,7 +2,7 @@ import React from "react";
 
 import Button from "./Button";
 
-const ManageAlertsButton = () => {
+const ManageAlertsButton = ({ onClick }) => {
   return (
     <div>
       <Button
@@ -12,6 +12,7 @@ const ManageAlertsButton = () => {
         center={"justify-center"}
         mr={"mr-2"}
         rounded={"rounded-md"}
+        onClick={onClick}
       >
         Gestionar alertas
       </Button>

@@ -7,13 +7,19 @@ import DebtorsTable from "../tables/DebtorsTable";
 import ManageAlertsButton from "../buttons/ManageAlertsButton";
 import AddCreditButton from "../buttons/AddCreditButton";
 import DebtorMovements from "../movements/DebtorMovements";
-
 import AddCreditModal from "../modals/AddCreditModal";
 import HeaderDebtorMenu from "../headers/HeaderDebtorMenu";
+import ManageAlertsModal from "../modals/ManageAlertsModal";
 
 const DebtorMenu = () => {
-  const { debtorTemp, setDebtorTemp, activeModal, setActiveModal } =
-    useContext(store);
+  const {
+    debtorTemp,
+    setDebtorTemp,
+    activeModal,
+    setActiveModal,
+    alertsModal,
+    setAlertsModal,
+  } = useContext(store);
 
   const handleClick = () => {
     setActiveModal(true);
@@ -29,7 +35,7 @@ const DebtorMenu = () => {
     <>
       <div
         className={`pl-5 pr-5 animate__animated animate__fadeIn animate__faster 
-      ${activeModal ? "blur-sm" : ""}`}
+      ${activeModal || alertsModal? "blur-sm" : ""}`}
       >
         <HeaderDebtorMenu onClick={handleNavigate} />
 
@@ -39,7 +45,12 @@ const DebtorMenu = () => {
           id="buttons"
           className="mt-5 mb-5 flex flex-col gap-5 350px:flex-row 350px:justify-center"
         >
-          <ManageAlertsButton />
+          <ManageAlertsButton
+            onClick={() => {
+              setAlertsModal(true);
+             
+            }}
+          />
 
           <AddCreditButton onClick={handleClick} />
         </div>
@@ -49,11 +60,11 @@ const DebtorMenu = () => {
           className="bg-black/10 rounded-md shadow-md shadow-black/50 p-2 flex flex-col 900px:flex-row"
         >
           <DebtorMovements />
-     
         </div>
       </div>
 
       <AddCreditModal />
+      <ManageAlertsModal />
     </>
   );
 };

@@ -5,14 +5,16 @@ import { store } from "../context/Context";
 import Button from "../buttons/Button";
 import Title from "../titles/Title";
 
-const Modal = ({ children, w, title }) => {
-  const { activeModal, setActiveModal, cleanData } = useContext(store);
+const Modal = ({ children, w, title, active }) => {
+  const { activeModal, setActiveModal, cleanData, setAlertsModal } =
+    useContext(store);
 
   const [showModal, setShowModal] = useState("hidden");
   const [animation, setAnimation] = useState("animate__bounceIn");
 
   const handleClick = () => {
     setActiveModal(null);
+    setAlertsModal(null);
     setTimeout(() => {
       cleanData();
     }, 1000);
@@ -23,7 +25,7 @@ const Modal = ({ children, w, title }) => {
   };
 
   useEffect(() => {
-    if (!activeModal) {
+    if (!active) {
       setAnimation("animate__bounceOut");
 
       setTimeout(() => {
@@ -33,7 +35,7 @@ const Modal = ({ children, w, title }) => {
       setShowModal("");
       setAnimation("animate__bounceIn");
     }
-  }, [activeModal]);
+  }, [active]);
 
   return (
     <>
