@@ -34,8 +34,8 @@ const DebtorMenu = () => {
   return (
     <>
       <div
-        className={`pl-5 pr-5 animate__animated animate__fadeIn animate__faster 
-      ${activeModal || alertsModal? "blur-sm" : ""}`}
+        className={`pl-5 pr-5 w-[100vw] h-[100vh] custom-scroll overflow-auto animate__animated animate__fadeIn animate__faster 
+      ${activeModal || alertsModal ? "blur-sm" : ""}`}
       >
         <HeaderDebtorMenu onClick={handleNavigate} />
 
@@ -48,7 +48,6 @@ const DebtorMenu = () => {
           <ManageAlertsButton
             onClick={() => {
               setAlertsModal(true);
-             
             }}
           />
 
@@ -57,7 +56,7 @@ const DebtorMenu = () => {
 
         <div
           id="container-debtor-movements"
-          className="bg-black/10 rounded-md shadow-md shadow-black/50 p-2 flex flex-col 900px:flex-row"
+          className="bg-black/10 rounded-md shadow-md shadow-black/50 p-2 custom-scroll overflow-auto mb-72 flex justify-center"
         >
           <DebtorMovements />
         </div>

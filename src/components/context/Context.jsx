@@ -110,7 +110,7 @@ const Context = ({ children }) => {
     try {
       let currentDate = new Date();
 
-      await axios.post("http://localhost:4000/add-debt", {
+      await axios.post("https://note-cobro.onrender.com/add-debt", {
         _id: debtorTemp._id,
         debt: debtorTemp.debt,
         products,
@@ -129,7 +129,7 @@ const Context = ({ children }) => {
 
   const createAlert = async () => {
     try {
-      await axios.post("http://localhost:4000/create-alert", {
+      await axios.post("https://note-cobro.onrender.com/create-alert", {
         _id: debtorTemp._id,
         debtorTemp,
         payDay,
@@ -160,7 +160,6 @@ const Context = ({ children }) => {
   //     );
   //   }
   // };
-
 
   const cleanData = () => {
     setName(null);
