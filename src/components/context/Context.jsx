@@ -33,13 +33,14 @@ const Context = ({ children }) => {
   const [productName, setProductName] = useState(null);
   const [unitPrice, setUnitPrice] = useState(null);
   const [productsQuantity, setProductsQuantity] = useState(null);
-  const [totalPrice, setTotalPrice] = useState(null);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const [products, setProducts] = useState([]);
 
   const [payDay, setPayDay] = useState("");
-  const [payMonth, setPayMonth] = useState("");
-  const [payHour, setPayHour] = useState("");
+  const [payMonth, setPayMonth] = useState(null);
+  const [payHour, setPayHour] = useState(null);
+  const [payMinute, setPayMinute] = useState(null);
   const [maxAmount, setMaxAmount] = useState(null);
 
   const validateCredentials = async () => {
@@ -99,11 +100,10 @@ const Context = ({ children }) => {
 
   const addProducts = () => {
     setProducts([...products, { productName, unitPrice, productsQuantity }]);
-
+    setTotalPrice(totalPrice + unitPrice * productsQuantity);
     setProductName(null);
     setUnitPrice(null);
     setProductsQuantity(null);
-    setTotalPrice(totalPrice + productName * productsQuantity);
   };
 
   const addDebt = async () => {
@@ -131,9 +131,11 @@ const Context = ({ children }) => {
     try {
       await axios.post("http://localhost:4000/create-alert", {
         _id: debtorTemp._id,
+        debtorTemp,
         payDay,
         payMonth,
         payHour,
+        payMinute,
         maxAmount,
       });
 
@@ -148,6 +150,17 @@ const Context = ({ children }) => {
       );
     }
   };
+
+  // const sendEmail = async () => {
+  //   try {
+  //     await axios.post("http://localhost:4000/send-email", {});
+  //   } catch (error) {
+  //     console.log(
+  //       `ocurrio un error en el fornt al intentar enviar el correo. ${error}`
+  //     );
+  //   }
+  // };
+
 
   const cleanData = () => {
     setName(null);
@@ -213,6 +226,8 @@ const Context = ({ children }) => {
         setPayMonth,
         payHour,
         setPayHour,
+        payMinute,
+        setPayMinute,
         maxAmount,
         setMaxAmount,
         createAlert,

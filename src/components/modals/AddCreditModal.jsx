@@ -85,7 +85,7 @@ const AddCreditModal = () => {
                 console.log(debtorTemp.totalPrice);
               }}
             >
-              Total:{" "}
+              Total:
               <span className="font-semibold">
                 {totalPrice === null ? 0 : totalPrice}
               </span>

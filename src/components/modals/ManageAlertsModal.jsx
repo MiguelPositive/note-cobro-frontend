@@ -9,10 +9,12 @@ import MaxAmountInput from "../input/MaxAmountInput";
 import SendButton from "../buttons/SendButton";
 
 const ManageAlertsModal = () => {
-  const { alertsModal, createAlert } = useContext(store);
+  const { alertsModal, createAlert, sendEmail } = useContext(store);
 
   const sendData = () => {
     createAlert();
+
+
   };
 
   return (

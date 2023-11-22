@@ -3,17 +3,21 @@ import { useContext } from "react";
 import { store } from "../context/Context";
 
 const Time = () => {
-  const { setPayHour } = useContext(store);
+  const { setPayHour, setPayMinute } = useContext(store);
 
   const handleChangeHour = (e) => {
-    setPayHour(e.target.value);
+    let hour = e.target.value;
+
+    let date = new Date(`1970-01-01T${hour}`);
+
+    setPayHour(date.getHours());
+    setPayMinute(date.getMinutes());
   };
   return (
     <input
       className="w-full text-black rounded-md"
       type="time"
       onChange={handleChangeHour}
-      
     />
   );
 };
