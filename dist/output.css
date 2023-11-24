@@ -1353,6 +1353,10 @@ input:checked + .toggle-bg {
   margin-bottom: 1.5rem;
 }
 
+.mb-72 {
+  margin-bottom: 18rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -1427,18 +1431,6 @@ input:checked + .toggle-bg {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
-}
-
-.mb-32 {
-  margin-bottom: 8rem;
-}
-
-.mb-72 {
-  margin-bottom: 18rem;
 }
 
 .block {
@@ -5946,20 +5938,8 @@ input:checked + .toggle-bg {
 }
 
 @media (min-width: 370px) {
-  .\33 70px\:mr-0 {
-    margin-right: 0px;
-  }
-
   .\33 70px\:w-\[20rem\] {
     width: 20rem;
-  }
-
-  .\33 70px\:w-\[22rem\] {
-    width: 22rem;
-  }
-
-  .\33 70px\:w-\[2rem\] {
-    width: 2rem;
   }
 }
 
