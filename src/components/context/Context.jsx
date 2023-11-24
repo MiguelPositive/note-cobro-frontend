@@ -129,7 +129,7 @@ const Context = ({ children }) => {
 
   const createAlert = async () => {
     try {
-      await axios.post("https://note-cobro.onrender.com/create-alert", {
+      await axios.post("http://localhost:4000/create-alert", {
         _id: debtorTemp._id,
         debtorTemp,
         payDay,
